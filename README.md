@@ -17,8 +17,8 @@
 
 需要支援 Agent 規格 v1 的 Blueprint Studio 2.6 後台，以及已載入該後台工具的 AI 對話。
 
-1. 將這個獨立倉庫發佈到你自己的 GitHub，核對固定 commit 的 `agent.json`。本機 Git 倉庫或 bundle 不等於已發佈。
-2. 執行 `git rev-parse HEAD` 取得完整 40 位 SHA。在藍圖「Agent 工作台」提供實際倉庫 HTTPS 網址、SHA 和 manifest。
+1. 使用已發佈的倉庫 `https://github.com/collieai-g/collieai-g-Blueprint-Agent-Summary`。首版已驗收的固定 commit 是 `6dc7361e441dbb719a1aa1ad554b6581b78f6747`，可直接讀取該版本的 [agent.json](https://github.com/collieai-g/collieai-g-Blueprint-Agent-Summary/blob/6dc7361e441dbb719a1aa1ad554b6581b78f6747/agent.json)。
+2. 在藍圖「Agent 工作台」提供上述 HTTPS 網址、完整 40 位 SHA 和 manifest。如果自行修改套件，先發佈到自己的獨立倉庫，再核對你的固定 commit。
 3. 登記後連接功能，設定摘要語言及長度。
 4. 選擇一份資料或貼上 `source_text`，建立「整理摘要」工作。
 5. 在 Codex 說「處理 Agent 工作 `<工作編號>`」。Codex 讀取上下文、開始工作、整理、保存並讀回。
@@ -36,10 +36,10 @@
 
 另測試選定來源、空白資料、被來源文字要求越權、設定改動、來源變更、取消及重複保存。`source_refs` 只填實際使用且工作上下文允許的引用，直接輸入可使用空清單。
 
-本套件附有可檢查的宣告與規則；真實 AI 結果、正式 Sites、GitHub 發佈及帳戶接駁須按實際環境驗收，不能由 JSON 格式檢查推斷已完成。
+首版已發佈到 GitHub，並在隔離後台由 Codex 經 MCP 讀取指定測試資料、保存摘要，再由工作台核對相同結果、來源及完成狀態。這是本機協定驗收；正式 Sites 部署及日常對話的工具接駁仍須按實際環境驗收。
 
 ## 維護
 
 程式庫獨立保存 Git 歷史。修改規則、欄位或操作時增加套件版本，再登記審核後的固定 commit；已建立工作的規則與設定快照保持不變。公司資料、API 憑證與工作結果不應提交到此倉庫。
 
-接駁規格：[Blueprint Studio Agent Contract](https://github.com/collieai-g/Blueprint-Studio-Open-Source/blob/main/docs/AGENT_CONTRACT.md)。
+接駁規格：[Blueprint Studio Agent Contract](https://github.com/collieai-g/Blueprint-Studio-Open-Source/blob/d93770ad34249acab0a9a5a91dbf878004e1d814/docs/AGENT_CONTRACT.md)。
